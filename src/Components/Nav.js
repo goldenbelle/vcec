@@ -12,6 +12,8 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   z-index: 10;
+  background-color: gold;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
 `;
 
 const List = styled.div`
