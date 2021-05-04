@@ -111,7 +111,6 @@ const List = styled.div`
 `;
 
 export default withRouter(({ location: { pathname } }) => {
-  const a = "haha";
   const menus = [
     { name: "소개", path: "/about" },
     { name: "2년제", path: "/college" },
@@ -122,7 +121,7 @@ export default withRouter(({ location: { pathname } }) => {
     { name: "연락처", path: "/contatc", dropdown: "예약, 오시는길" },
   ];
 
-  const [btn, setBtn] = useState(false);
+  const [btn, setBtn] = useState(true);
 
   const handleToggle = (e) => {
     if (btn === true) {
