@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 const Main = styled.main`
   height: 100vw;
-  background-color: skyblue;
 `;
 
 const Slide = styled.div`
   height: 50vw;
   background-image: url("https://cdn.pixabay.com/photo/2015/05/05/17/56/vancouver-754204_1280.jpg");
+  background-size: cover;
 `;
 
 const SlideFrame = styled.div`
@@ -35,9 +35,9 @@ const SlideFrame = styled.div`
 const Section = styled.section`
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 50%;
   padding: 10px;
-  border: 2px solid red;
 `;
 
 export default class extends React.Component {
@@ -52,7 +52,7 @@ export default class extends React.Component {
             </SlideFrame>
           </Slide>
 
-          <Section>Service</Section>
+          <Section>Services</Section>
         </Main>
       </>
     );
