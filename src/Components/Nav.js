@@ -73,6 +73,7 @@ const List = styled.div`
   @media screen and (max-width: 800px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 0px 20px 0px 20px;
     ${Logo} {
       display: flex;
     }
@@ -82,11 +83,15 @@ const List = styled.div`
       align-items: center;
       color: white;
       padding: 10px;
+
       i:nth-child(1) {
         display: ${(props) => (props.className ? "block" : "none")};
       }
       i:nth-child(2) {
         display: ${(props) => (props.className ? "none" : "block")};
+      }
+      i:hover {
+        cursor: pointer;
       }
     }
     ${Menus} {
@@ -115,10 +120,10 @@ export default withRouter(({ location: { pathname } }) => {
     { name: "소개", path: "/about" },
     { name: "2년제", path: "/college" },
     { name: "4년제", path: "/university" },
-    { name: "2년제", path: "/master" },
-    { name: "유학 후 이민", path: "/immigration" },
+    { name: "석사", path: "/master" },
+    { name: "유학후이민", path: "/immigration" },
     { name: "후기", path: "/review", dropdown: "유학, 이민" },
-    { name: "연락처", path: "/contatc", dropdown: "예약, 오시는길" },
+    { name: "연락처", path: "/contact", dropdown: "예약, 오시는길" },
   ];
 
   const [btn, setBtn] = useState(true);
@@ -126,15 +131,18 @@ export default withRouter(({ location: { pathname } }) => {
   const handleToggle = (e) => {
     if (btn === true) {
       setBtn(false);
-      console.log("fasled");
     } else if (btn === false) {
       setBtn(true);
-      console.log("trued");
     }
   };
 
+  useEffect(() => {
+    return setBtn(true);
+  }, []);
+  //Todo: nav bar + scroll -> background change
+  //Todo: nav responsive -> refresh page setBtn(true)
   return (
-    <Header className={btn}>
+    <Header>
       <List className={btn}>
         <Logo>
           <SLink to="/">밴쿠버 컬리지 센터</SLink>

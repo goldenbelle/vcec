@@ -1,50 +1,54 @@
 import React from "react";
 import styled from "styled-components";
+import Gallery from "../Components/Gallery";
+import Top from "../Components/Top";
 
-const Top = styled.div`
-  background-image: url("https://cdn.pixabay.com/photo/2016/02/29/23/17/canadian-flag-1229484_1280.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 40vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Text = styled.div`
-  position: absolute;
-  color: white;
-  font-weight: 700;
-  font-size: 30px;
-  background-color: black;
-`;
 const Div = styled.div`
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
 `;
 
 const Title = styled.div`
+  display: flex;
+  justify-content: center;
   font-size: 30px;
   font-weight: 600;
-  padding: 20px 0px 10px 0px;
+  padding: 50px 0px 30px 0px;
+  width: 800px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  &:nth-child(1) {
+    border-top: none;
+  }
 `;
 
 const Content = styled.div`
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  line-height: 30px;
+  font-size: 20px;
+  padding-bottom: 50px;
 `;
 
-export default class extends React.Component {
-  render() {
-    return (
-      <>
-        <Top>
-          {" "}
-          <Text>샘플이미지입니다.</Text>
-        </Top>
+const Main = styled.div`
+  @media screen and (max-width: 800px) {
+    ${Content} {
+      width: 100%;
+      font-size: 17px;
+      line-height: 30px;
+    }
+  }
+`;
+
+export default () => {
+  return (
+    <>
+      <Main>
+        <Top url="https://cdn.pixabay.com/photo/2019/11/12/18/41/buildings-4621816_1280.jpg" />
         <Div>
-          <Title>밴쿠버 컬리지 소개</Title>
+          <Title>밴쿠버 컬리지 센터 소개</Title>
           <Content>
             캐나다 밴쿠버에서만 14년째 유학원 업무를 보고 있고, 캐나다 밴쿠버에
             있는 유학원의 장점을 살려서 여러분들에게 실질적인 도움이 될 수
@@ -56,13 +60,19 @@ export default class extends React.Component {
             함께 고민하고 노력하는 진정한 유학원이 될 수 있도록 하겠습니다.{" "}
           </Content>
           <Title>제공하는 서비스 및 혜택</Title>
-          <Content>튜터 사진, 오리엔테이션</Content>
+          <Content>
+            <Gallery /> <Gallery /> <Gallery />
+          </Content>
           <Title>사무실 내부 전경</Title>
-          <Content>사진 갤러리 위치할 곳</Content>
+          <Content>
+            <Gallery /> <Gallery /> <Gallery />
+          </Content>
           <Title>세미나: 줌세미나, 한국 출장 세미나</Title>
-          <Content>사진 갤러리 위치할 곳</Content>
+          <Content>
+            <Gallery /> <Gallery /> <Gallery />
+          </Content>
         </Div>
-      </>
-    );
-  }
-}
+      </Main>
+    </>
+  );
+};
