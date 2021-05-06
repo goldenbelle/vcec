@@ -45,7 +45,6 @@ const Value = styled.div`
 export default withRouter(({ location: { pathname } }) => {
   const query = pathname.split("/");
   const { data, loading, error } = Axios(Api.detail(query[2]));
-  console.log(data);
 
   return loading ? (
     <Loader />

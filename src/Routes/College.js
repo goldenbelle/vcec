@@ -36,7 +36,7 @@ const Title = styled.div`
 
 const Public = styled.div`
   background-color: lightgrey;
-  width: 40px;
+  width: 70px;
   text-align: center;
   padding: 5px;
   margin-bottom: 10px;
