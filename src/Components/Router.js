@@ -21,8 +21,8 @@ export default () => (
       <Route path="/about" component={About} />
       <Route path="/college" exact component={College} />
       <Route path="/college/:id" component={CollegeDetail} />
-      <Route path="/university" component={Blank} />
-      <Route path="/master" component={Blank} />
+      <Route path="/university" component={College} />
+      <Route path="/master" component={College} />
       <Route path="/immigration" component={Blank} />
       <Route path="/review" component={Blank} />
       <Route path="/contact" component={Blank} />
